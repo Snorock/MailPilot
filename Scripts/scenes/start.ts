@@ -8,15 +8,15 @@ module scenes {
     // Public Properties
 
     // Constructor
-    constructor(assetManager: createjs.LoadQueue) {
-      super(assetManager);
+    constructor() {
+      super();
 
       this.Start();
     }
 
     // Private Mathods
     private _startButtonClick():void {
-      objects.Game.currentScene = config.Scene.PLAY;
+      managers.Game.currentScene = config.Scene.PLAY;
     }
 
 

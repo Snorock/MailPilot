@@ -13,8 +13,8 @@ module scenes {
     // Public Properties
 
     // Constructor
-    constructor(assetManager: createjs.LoadQueue) {
-      super(assetManager);
+    constructor() {
+      super();
 
       this.Start();
     }
@@ -45,7 +45,7 @@ module scenes {
 
       // create the scoreboard UI for the Scene
       this._scoreBoard = new managers.ScoreBoard();
-      objects.Game.scoreBoard = this._scoreBoard;
+      managers.Game.scoreBoard = this._scoreBoard;
 
       this.Main();
     }
@@ -68,7 +68,7 @@ module scenes {
       // if lives fall below zero switch scenes to the game over scene
       if(this._scoreBoard.Lives <= 0) {
         this._engineSound.stop();
-        objects.Game.currentScene = config.Scene.OVER;
+        managers.Game.currentScene = config.Scene.OVER;
       }
 
     }

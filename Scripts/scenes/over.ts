@@ -10,15 +10,15 @@ module scenes {
     // Public Properties
 
     // Constructor
-    constructor(assetManager: createjs.LoadQueue) {
-      super(assetManager);
+    constructor() {
+      super();
 
       this.Start();
     }
 
     // Private Mathods
     private _restartButtonClick():void {
-      objects.Game.currentScene = config.Scene.PLAY;
+      managers.Game.currentScene = config.Scene.PLAY;
     }
 
 
@@ -51,7 +51,7 @@ module scenes {
 
       // add scoreboard to the scene
       this.addChild(this._scoreboard.HighScoreLabel);
-      this._scoreboard.HighScore = objects.Game.HighScore;
+      this._scoreboard.HighScore = managers.Game.HighScore;
 
       // event listeners
       this._restartButton.on("click", this._restartButtonClick);

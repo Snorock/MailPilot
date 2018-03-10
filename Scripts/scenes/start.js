@@ -14,14 +14,14 @@ var scenes;
         __extends(StartScene, _super);
         // Public Properties
         // Constructor
-        function StartScene(assetManager) {
-            var _this = _super.call(this, assetManager) || this;
+        function StartScene() {
+            var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // Private Mathods
         StartScene.prototype._startButtonClick = function () {
-            objects.Game.currentScene = config.Scene.PLAY;
+            managers.Game.currentScene = config.Scene.PLAY;
         };
         // Public Methods
         // Initialize Game Variables and objects
